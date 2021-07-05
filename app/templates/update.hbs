@@ -1,0 +1,27 @@
+<form {{on 'submit' this.Update}}>
+  <div class='mb-3'>
+
+    {{! template-lint-disable require-input-label }}
+    <input
+      type='text'
+      name='title'
+      value={{this.model.title}}
+      {{on 'change' this.UpdateTitle}}
+      class='form-control'
+    />
+
+  </div>
+  <div class='mb-3'>
+    {{! template-lint-disable require-input-label }}
+    <input
+      type='text'
+      name='body'
+      value={{this.model.body}}
+      {{on 'change'  this.UpdateBody}}
+      class='form-control'
+    />
+  </div>
+
+  <button type='submit' class='btn btn-primary'>Submit</button>
+</form>
+{{outlet}}

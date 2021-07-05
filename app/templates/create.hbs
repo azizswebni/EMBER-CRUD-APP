@@ -1,0 +1,25 @@
+<form {{on 'submit' this.Create}}>
+  <div class='mb-3'>
+
+    {{!-- template-lint-disable require-input-label --}}
+    <input
+      type='text'
+      name='title'
+      {{on 'change' (fn this.update 'title')}}
+      class='form-control'
+    />
+
+  </div>
+  <div class='mb-3'>
+    {{!-- template-lint-disable require-input-label --}}
+    <input
+      type='text'
+      name='body'
+      {{on 'change' (fn this.update 'body')}}
+      class='form-control'
+    />
+  </div>
+
+  <button type='submit' class='btn btn-primary'>Submit</button>
+</form>
+{{outlet}}

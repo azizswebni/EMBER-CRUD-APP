@@ -1,0 +1,12 @@
+{{#each this.model as |post|}}
+  {{! template-lint-disable no-curly-component-invocation }}
+  {{! template-lint-disable no-link-to-positional-params }}
+  {{#link-to 'post' post.id}}
+    <h1> {{post.title}} {{post.id}} </h1>
+  {{/link-to}}
+  <h2> {{post.body}} </h2>
+  {{#link-to 'update' post.id}}
+    <button type='button'>update</button>
+  {{/link-to}}
+  <button type='button' {{on 'click' (fn this.deletePost post)}}>delete</button>
+{{/each}}
